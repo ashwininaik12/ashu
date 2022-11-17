@@ -9,6 +9,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -38,6 +39,10 @@ public class BaseClass {
 	public void navigatingToApp() {
 		driver.get("https://demowebshop.tricentis.com/login");
 	//	driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+	}
+	@BeforeMethod
+	public void start() {
+		 logger.log(Status.INFO, "successfully start ");
 	}
 	@AfterMethod
 	public void CheckingFailure(ITestResult result) throws IOException {
